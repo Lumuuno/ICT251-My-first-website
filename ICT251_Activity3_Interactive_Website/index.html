@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive personal student portfolio for ICT251 Web Technologies.">
+    <title>My Student Portfolio | ICT251</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+<header id="home">
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="#home">My Portfolio</a>
+        <button id="menuButton" class="menu-button" type="button"
+                aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+        <ul id="navLinks" class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#learning">Learning Plan</a></li>
+            <li><a href="#projects">Projects & Skills</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <p class="eyebrow">ICT251 Web Technologies</p>
+            <h1>Lumuuno Mulamfu</h1>
+            <p class="hero-programme">Computer Science Student</p>
+            <p class="hero-text">
+                Welcome to my personal student portfolio. This website presents my interests,
+                learning journey, projects and practical work in web technologies.
+            </p>
+            <div class="hero-actions">
+                <a class="button" href="#projects">View My Projects</a>
+                <button class="button secondary" id="themeButton" type="button">Switch Theme</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="about" class="content-section">
+        <p class="section-label">Introduction</p>
+        <h2>About Me</h2>
+        <p>
+            I am a computer science student at mulungushi university,currently in my second year.
+            I am very passionate  about learning and improving my techincal skills. I am especially
+            interested in coding and chess on account of them both requiring critical thinking,
+            advanced problem solving skills and patience. Through my studies i hope to strengthen
+            my coding skills and become a more comfident and capablenprogrammer in the future.
+        </p>
+    </section>
+
+    <section id="hobbies" class="content-section">
+        <p class="section-label">Personal Interests</p>
+        <h2>My Hobbies</h2>
+        <ul class="hobby-list">
+            <li>Coding</li>
+            <li>Reading</li>
+            <li>Chess</li>
+        </ul>
+    </section>
+
+    <section id="learning" class="content-section">
+        <p class="section-label">My Development Plan</p>
+        <h2>My Learning Plan</h2>
+        <ol>
+            <li>Practise semantic HTML and accessible page structure.</li>
+            <li>Improve responsive CSS using Flexbox, Grid and media queries.</li>
+            <li>Build interactive features with JavaScript and the DOM.</li>
+        </ol>
+
+        <div class="table-wrapper">
+            <table>
+                <caption>Weekly Web Learning Plan</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Practice Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sunday</td><td>HTML5</td><td>Build semantic page sections</td></tr>
+                    <tr><td>Tuesday</td><td>CSS</td><td>Practise responsive layouts</td></tr>
+                    <tr><td>Saturday</td><td>JavaScript</td><td>Practise DOM events and validation</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section">
+        <p class="section-label">What I Have Learned</p>
+        <h2>Projects & Skills</h2>
+
+        <div class="filter-bar">
+            <label for="projectSearch">Search projects or skills</label>
+            <input id="projectSearch" type="search" placeholder="e.g. HTML">
+            <button id="resetSearch" class="small-button" type="button">Reset</button>
+        </div>
+        <p id="searchMessage" class="status-message" aria-live="polite"></p>
+
+        <div id="projectGrid" class="project-grid">
+            <article class="project-card" data-search="html web structure semantic">
+                <h3>HTML5 Web Structure</h3>
+                <p>Semantic HTML, navigation, sections, forms, tables and accessible labels.</p>
+                <button class="details-button" type="button" aria-expanded="false">Show details</button>
+                <div class="project-details" hidden>
+                    <p>I learned how to organise a website with meaningful HTML5 elements and relative links.</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-search="css responsive styling design">
+                <h3>Responsive CSS</h3>
+                <p>Typography, spacing, the box model, responsive images and media queries.</p>
+                <button class="details-button" type="button" aria-expanded="false">Show details</button>
+                <div class="project-details" hidden>
+                    <p>I learned how CSS can make the same website usable on both phones and computers.</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-search="javascript dom events validation">
+                <h3>JavaScript Interaction</h3>
+                <p>Events, DOM updates, arrays, filtering, form validation and interactive controls.</p>
+                <button class="details-button" type="button" aria-expanded="false">Show details</button>
+                <div class="project-details" hidden>
+                    <p>I learned how JavaScript responds to user actions and updates page content without reloading.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="photos" class="content-section">
+        <p class="section-label">Gallery</p>
+        <h2>My Photos</h2>
+        <div class="gallery-viewer">
+            <figure>
+                <img id="galleryImage" src="images/photo1.jpg"
+                     alt="Replace with a useful description of your first personal photo">
+                <figcaption id="galleryCaption">Photo 1 —A photo from my personal collection.</figcaption>
+            </figure>
+            <div class="gallery-controls">
+                <button id="previousPhoto" class="small-button" type="button">Previous</button>
+                <span id="photoCounter" aria-live="polite">1 of 3</span>
+                <button id="nextPhoto" class="small-button" type="button">Next</button>
+            </div>
+        </div>
+        <div class="photo-note">
+        </div>
+    </section>
+
+    <section id="media" class="content-section">
+        <p class="section-label">Recordings</p>
+        <h2>My Media</h2>
+
+        <div class="media-grid">
+            <article>
+                <h3>Self-Introduction Video</h3>
+                <video controls preload="metadata">
+                    <source src="videos/intro.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <p><strong>Summary:</strong></p>
+            </article>
+
+            <article>
+                <h3>Hobby / Study Audio</h3>
+                <audio controls preload="metadata">
+                    <source src="videos/voice.mp3" type="audio/opus">
+                    Your browser does not support HTML5 audio.
+                </audio>
+                <p><strong>Summary:</strong></p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <p class="section-label">Get in Touch</p>
+        <h2>Contact</h2>
+        <p class="form-note">Browser demonstration only — no message is sent.</p>
+
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input id="name" name="name" type="text" required>
+                <small id="nameError" class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required>
+                <small id="emailError" class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                    <option value="General enquiry">General enquiry</option>
+                    <option value="Web technologies">Web technologies</option>
+                    <option value="Projects">Projects</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <small id="messageError" class="error" aria-live="polite"></small>
+            </div>
+
+            <button class="button" type="submit">Validate & Preview</button>
+            <p id="formStatus" class="status-message" aria-live="polite"></p>
+            <div id="formPreview" class="form-preview" hidden></div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div>
+        <h2 class="footer-title">My Student Portfolio</h2>
+        <p>Built for ICT251 Web Technologies Activity 3.</p>
+        <p>
+            Learning resource:
+            <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener">
+                MDN Web Development
+            </a>
+        </p>
+    </div>
+    <div>
+        <a href="YOUR_GITHUB_REPOSITORY_URL" target="_blank" rel="noopener">View Source on GitHub</a>
+        <p>&copy; 2026 Lumuuno Mulamfu. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
